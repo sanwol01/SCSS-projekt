@@ -1,0 +1,21 @@
+/*variabler*/
+
+$bg-color:#f0f0f0;
+$nav-color:#fff;
+$footer-color:#0a1f1f; 
+$primary-color: #388071;
+$sekundary-color:#133833;
+$text-color:#333;
+$font:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* variabler deklareres i toppen af vores stylesheet og de er globale.
+Variabler defineret i blokke ({}) er normalvis lokale og kan kun tilgås inde i blokken*/
+
+/*Mixin*/
+/* mixin er en måde at genbruge kode på. Vi kan tage kode der bruges flere steder og samle det i en mixin.*/
+@mixin flex($justify: center, $align: center){
+ /*$justify og $align er parametre/variabler der kan ændres når vores mixin kaldes*/
+ display: flex;
+ justify-content: $justify;
+ align-items: $align;
+}
+
