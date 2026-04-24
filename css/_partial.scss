@@ -19,3 +19,19 @@ Variabler defineret i blokke ({}) er normalvis lokale og kan kun tilgås inde i 
  align-items: $align;
 }
 
+@mixin btn($bg-color:$primary-color, $btn-padding: 0.8em 1em){
+    background-color: $bg-color;
+    padding: $btn-padding;
+    border-radius: 8px;
+    color: #fff;
+    text-decoration: none;  
+    text-align: center;
+}
+
+@mixin cta-box($width: 20vw) {
+    background-color: #fff;
+    width: $width;
+    padding: 2em;
+    margin: 2em auto;
+}
+

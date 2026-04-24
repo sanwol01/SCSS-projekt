@@ -99,3 +99,90 @@ body{
 
 
   }
+
+  /*------------hero banner section------------*/
+
+
+
+  .header-img{
+   grid-column: 1/6;
+   background-image: url('../img/computer.jpg');
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+   height: 75vh;
+   margin-bottom: 1em;
+   border-bottom: 4px solid partial.$primary-color;
+    
+      .banner-tekst{
+         position: absolute;
+         left: 5%;
+         top: 30%;
+
+         h1{
+            font-size: 3.5vw;
+         }
+         p{
+            font-size: 2.2vw;
+         }
+         a{
+            @include partial.btn;
+             position: absolute;
+
+             &:hover{
+                background-color: partial.$sekundary-color;
+                transition: 0.3s ease-in-out;
+             } 
+         }
+      }
+  }
+
+  /*----------------forside main styling-------------*/
+
+  main{
+    grid-column: 1/6;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    
+  }
+
+  .cta-wrapper{
+    grid-column: 1/7;
+
+      h2{
+         text-align: center;
+         margin-bottom: 30px;
+      }
+
+      .cta-bokse{
+         display: flex;
+         justify-content: space-around;
+      }
+  }
+
+  /*---------------CTA bokse--------------------*/
+
+  .cta-1, .cta-2, .cta-3{
+      @include partial.cta-box;
+      
+         img{
+         margin: 0 auto;
+         width: 60%;
+         display: block;
+         }
+
+         p{
+            margin-bottom: 2em;
+         }
+
+         a{
+            @include partial.btn;
+            display: block;
+
+            &:hover{
+                background-color: partial.$sekundary-color;
+                transition: 0.3s ease-in-out;
+             } 
+        
+         }
+  }
