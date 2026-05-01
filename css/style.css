@@ -247,6 +247,17 @@ main {
 input[type=text], input[type=mail], input[type=tel], select, textarea {
   width: 100%;
   font-size: 15px;
+  padding: 1em;
+  border: 2px solid #133833;
+  margin: 0.5em 1em 1em 1em;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+input[type=text]::-moz-placeholder, input[type=mail]::-moz-placeholder, input[type=tel]::-moz-placeholder, select::-moz-placeholder, textarea::-moz-placeholder {
+  color: #333;
+}
+input[type=text]::placeholder, input[type=mail]::placeholder, input[type=tel]::placeholder, select::placeholder, textarea::placeholder {
+  color: #333;
 }
 
 .visually-hidden { /*Bootstrap defineret class som fjerner element fra skærm, men som stadig kan læses af skærmlæseren*/

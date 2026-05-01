@@ -278,6 +278,30 @@ body{
 input[type=text], input[type=mail], input[type=tel], select, textarea{
    width: 100%;
    font-size: 15px;
+   padding: 1em;
+   border: 2px solid partial.$sekundary-color;
+   margin: 0.5em 1em 1em 1em;
+   box-sizing: border-box;
+   font-family: partial.$font;
+
+      &::placeholder{
+         color: partial.$text-color;
+      }
+
+}
+
+input[type=submit]{
+   @include partial.btn;
+   font-size: 15px;
+   border: none;
+   width: 100%;
+   margin: 0 1em;
+   cursor: pointer;
+
+      &:hover{
+         background-color: $sekundary-color;
+         transition: 0.3s ease-in-out;
+      }
 }
 
 .visually-hidden{ /*Bootstrap defineret class som fjerner element fra skærm, men som stadig kan læses af skærmlæseren*/
@@ -289,7 +313,111 @@ input[type=text], input[type=mail], input[type=tel], select, textarea{
   position: absolute;
   white-space: nowrap;
   width: 1px;
+
 }
+
+/*-------- footer -----------*/
+
+footer:nth-of-type(1){
+   grid-column: 1/6;
+   background-color: partial.$footer-color;
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   padding: 1em 4em;
+
+         p, h4{
+            color: partial.$nav-color;
+            line-height: 0.5;
+            font-style: normal;
+         }
+
+         h4{
+            font-size: 18px;
+         }
+
+         a{
+            color: partial.$nav-color;
+            text-decoration: underline;
+
+               &:hover{
+                  color: partial.$primary-color;
+               }
+         }
+
+         .logo-footer{
+            width: 100px;
+            height: auto;
+         }
+}
+
+
+.footer-left{
+   grid-column: 1/2;
+}
+
+.footer-right{
+   grid-column: 2/3;
+   text-align: right;
+   margin: auto 0;
+}
+
+footer:nth-of-type(2){
+   grid-column: 1/6;
+   background-color: partial.$sekundary-color;
+   text-align: center;
+
+      p{
+         color: partial.$bg-color;
+      }
+}
+
+/*--tablet og mobil--*/
+
+@media screen and (max-width:768px) {
+
+   header{
+      display: inline;
+   }
+
+   nav{
+
+      #bars{
+         display: flex;
+         border:none;
+         background-color: transparent;
+         font-size: 2.3em;
+         color: partial.$primary-color;
+      }
+
+      ul{
+         display:none;
+         height: auto;
+         border: 4px solid partial.$primary-color;
+         flex-direction: column;
+
+            li{
+               display: flex;
+            }
+      }
+
+      .show{  /*skal ikke vløre i html men i java som tilføjer klassen ved klil*/
+          display: flex;  
+          position: absolute;
+          top: 80px;
+          left: 0;
+          padding: 0;
+          background-color: partial.$nav-color;
+          width: 100%;
+          z-index: 1;
+
+      }
+
+   }
+
+   
+}
+
+
 
  
  
